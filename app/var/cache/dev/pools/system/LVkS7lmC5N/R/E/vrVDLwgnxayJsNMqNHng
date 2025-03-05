@@ -1,0 +1,19 @@
+<?php //easyadmin.routes.fqcn_to_route
+
+return [PHP_INT_MAX, [
+    'App\\Controller\\Admin\\DashboardController' => [
+        '' => [
+            '' => 'admin',
+        ],
+        'App\\Controller\\Admin\\MusicCrudController' => [
+            'index' => 'admin_music_index',
+            'new' => 'admin_music_new',
+            'batchDelete' => 'admin_music_batch_delete',
+            'autocomplete' => 'admin_music_autocomplete',
+            'renderFilters' => 'admin_music_render_filters',
+            'edit' => 'admin_music_edit',
+            'delete' => 'admin_music_delete',
+            'detail' => 'admin_music_detail',
+        ],
+    ],
+]];

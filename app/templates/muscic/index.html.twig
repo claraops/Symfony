@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello music!{% endblock %}
+
+{% block body %} 
+    <h1> listes des muscis disponible </h1>
+
+     <a href="{{ path('app_muscic_new') }}">Ajouter une musique </a>
+
+ <ul>
+    {% for music in musicsList %}
+        <li>{{ music.auteur }} </li> 
+    {% endfor %}
+ </ul>
+{% endblock %}
