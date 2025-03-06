@@ -31,8 +31,12 @@ return [
     'app_muscic' => [[], ['_controller' => 'App\\Controller\\MuscicController::index'], [], [['text', '/']], [], [], []],
     'app_muscic_new' => [[], ['_controller' => 'App\\Controller\\MuscicController::new'], [], [['text', '/muscic/new']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'App\Controller\LuckyController::number' => [[], ['_controller' => 'App\\Controller\\LuckyController::number'], [], [['text', '/lucky/number']], [], [], []],
     'App\Controller\MuscicController::index' => [[], ['_controller' => 'App\\Controller\\MuscicController::index'], [], [['text', '/']], [], [], []],
     'App\Controller\MuscicController::new' => [[], ['_controller' => 'App\\Controller\\MuscicController::new'], [], [['text', '/muscic/new']], [], [], []],
     'App\Controller\RegistrationController::register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
+    'App\Controller\SecurityController::login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
+    'App\Controller\SecurityController::logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
 ];

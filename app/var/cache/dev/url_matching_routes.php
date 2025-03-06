@@ -25,6 +25,8 @@ return [
         '/' => [[['_route' => 'app_muscic', '_controller' => 'App\\Controller\\MuscicController::index'], null, null, null, false, false, null]],
         '/muscic/new' => [[['_route' => 'app_muscic_new', '_controller' => 'App\\Controller\\MuscicController::new'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

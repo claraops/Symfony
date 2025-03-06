@@ -33,3 +33,15 @@ a70b16,172.20.0.1,GET,http://localhost:8001/admin/music/new,1740667181,,200,requ
 82509f,172.20.0.1,GET,http://localhost:8001/register,1740667956,,200,request
 a858c9,172.20.0.1,POST,http://localhost:8001/register,1740668152,,302,request
 44e331,172.20.0.1,GET,http://localhost:8001/,1740668155,,200,request
+60d0e7,172.20.0.1,GET,http://localhost:8001/,1741267421,,200,request
+3df0b2,172.20.0.1,GET,http://localhost:8001/muscic/new,1741267948,,200,request
+f208c4,172.20.0.1,GET,http://localhost:8001/login,1741268067,4d140d,404,request
+4d140d,172.20.0.1,GET,http://localhost:8001/login,1741268069,,404,request
+66f8eb,172.20.0.1,GET,http://localhost:8001/login,1741268698,,200,request
+de112d,172.20.0.1,POST,http://localhost:8001/login,1741268726,,302,request
+c0f2d1,172.20.0.1,GET,http://localhost:8001/login,1741268740,,200,request
+cc4dd5,172.20.0.1,POST,http://localhost:8001/login,1741268811,,302,request
+3f96c2,172.20.0.1,GET,http://localhost:8001/,1741268822,,200,request
+834bc1,172.20.0.1,GET,http://localhost:8001/login,1741268988,,200,request
+141264,172.20.0.1,POST,http://localhost:8001/login,1741269027,,302,request
+e106ea,172.20.0.1,GET,http://localhost:8001/login,1741269040,,200,request
