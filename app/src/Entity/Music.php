@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\MusicRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 #[ORM\Entity(repositoryClass: MusicRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -32,6 +34,21 @@ class Music
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $auteur = null;
+
+
+        // src/Entity/Music.php
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'musics')]
+    #[ORM\JoinColumn(nullable: false)] // Assurez-vous que nullable est false
+    private ?Category $category = null;
+
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'musics')]
+    private Collection $tags;
+
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
+
 
     #[ORM\PrePersist]  
     public function setTimestampsValue(): void
@@ -106,4 +123,36 @@ class Music
 
         return $this;
     }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+        }
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        $this->tags->removeElement($tag);
+        return $this;
+    }
+
+
 }

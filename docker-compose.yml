@@ -1,13 +1,18 @@
+
+version: '3.8'
+
 services:
   web:
     build: config
     container_name: apachephp
-    ports: 
+    ports:
       - 8001:80
     volumes:
       - ./app:/var/www
       - ./config/vhosts:/etc/apache2/sites-enabled
       - ./config/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./var:/var/www/var  # Ajoutez cette ligne pour monter le répertoire var/
+    working_dir: /var/www
     networks:
       - dev
 
@@ -18,6 +23,10 @@ services:
       - ./mysql:/var/lib/mysql
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+     # MYSQL_ROOT_PASSWORD: 'root'
+     # MYSQL_DATABASE: 'symfony'
+      #MYSQL_USER: 'symfony'
+    #  MYSQL_PASSWORD: 'symfony'
     networks:
       - dev
 
@@ -28,8 +37,52 @@ services:
       - 8080:80
     environment:
       PMA_HOST: mysql
+     # PMA_USER: 'symfony'
+     # PMA_PASSWORD: 'symfony'
     networks:
       - dev
 
 networks:
   dev:
+    driver: bridge
+
+
+
+
+
+#services:
+ # web:
+  #  build: config
+   # container_name: apachephp
+    #ports: 
+     # - 8001:80
+    #volumes:
+     # - ./app:/var/www
+      #- ./config/vhosts:/etc/apache2/sites-enabled
+      #- ./config/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      #- working_dir: /var/www
+    #networks:
+    #  - dev
+
+  #mysql:
+   # image: mysql
+    #container_name: mysql
+    #volumes:
+     # - ./mysql:/var/lib/mysql
+    #environment:
+     # MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    #networks:
+     # - dev
+
+ # phpmyadmin:
+   # image: phpmyadmin
+   # container_name: phpmyadmin
+   # ports:
+    #  - 8080:80
+    #environment:
+    #  PMA_HOST: mysql
+    #networks:
+   #   - dev
+
+#networks:
+ # dev:

@@ -9,6 +9,15 @@
 
  <ul>
     {% for music in musicsList %}
+         <li>
+                {{ music.name }} ({{ music.category.name }})
+                <ul>
+                    {% for tag in music.tags %}
+                        <li>{{ tag.name }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+
         <li>{{ music.auteur }} </li> 
     {% endfor %}
  </ul>
