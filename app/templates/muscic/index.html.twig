@@ -1,24 +1,69 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello music!{% endblock %}
+{% block title %}Library - Musiques disponibles{% endblock %}
 
-{% block body %} 
-    <h1> listes des muscis disponible </h1>
+{% block body %}
+<div class="music-library-wrapper">
+    <!-- En-tête avec image de fond -->
+    <div class="library-header">
+        <div class="header-content">
+            <h1>Bibliothèque Musicale</h1>
+            <p class="lead">Découvrez toutes vos musiques en un seul endroit</p>
+        </div>
+    </div>
 
-     <a href="{{ path('app_muscic_new') }}">Ajouter une musique </a>
+    <div class="container">
+        <div class="library-actions">
+            <a href="{{ path('app_muscic_new') }}" class="add-music-btn">
+                <i class="fas fa-plus-circle me-2"></i>Ajouter une musique
+            </a>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Rechercher par titre, artiste...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
 
- <ul>
-    {% for music in musicsList %}
-         <li>
-                {{ music.name }} ({{ music.category.name }})
-                <ul>
-                    {% for tag in music.tags %}
-                        <li>{{ tag.name }}</li>
+        <div class="music-table-container">
+            <table class="music-table">
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Artiste</th>
+                        <th>Catégorie</th>
+                        <th>Tags</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for music in musicsList %}
+                    <tr>
+                        <td class="music-title">{{ music.name }}</td>
+                        <td class="music-artist">{{ music.auteur }}</td>
+                        <td>
+                            <span class="category-badge">
+                                {{ music.category.name }}
+                            </span>
+                        </td>
+                        <td class="tags-container">
+                            {% for tag in music.tags %}
+                            <span class="music-tag">
+                                {{ tag.name }}
+                            </span>
+                            {% endfor %}
+                        </td>
+                        <td class="actions">
+                            <button class="action-btn play-btn" title="Écouter">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <button class="action-btn edit-btn" title="Modifier">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </td>
+                    </tr>
                     {% endfor %}
-                </ul>
-            </li>
-
-        <li>{{ music.auteur }} </li> 
-    {% endfor %}
- </ul>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}

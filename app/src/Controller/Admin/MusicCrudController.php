@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Music;
+use App\Entity\Category;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -24,6 +25,8 @@ class MusicCrudController extends AbstractCrudController
             TextField::new('name'),
             TextField::new('url'),
             TextField::new('auteur'),
+            TextField::new('category_id'),
+            DateTimeField::new('createdAt')->hideOnForm(),
             DateTimeField::new('updatedAt')->hideOnForm(),
         ];
     }

@@ -1,11 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello music!{% endblock %}
+{% block title %}Créer une nouvelle musique{% endblock %}
 
-{% block body %}  
-    <h1> créer une nouvelle music </h1>
+{% block body %}
+<div class="music-creation-wrapper">
+    <!-- En-tête avec image de fond -->
+    <div class="music-form-header">
+        <div class="header-content">
+            <h1>Créer une musique</h1>
+        </div>
+    </div>
 
-    {{ form(form) }}
-
-    <a href="{{ path('app_muscic') }}"> Retour </a>
+    <!-- Contenu du formulaire -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="music-form-container">
+                    {{ form_start(form, {'attr': {'class': 'music-form'}}) }}
+                    
+                    <!-- Les champs du formulaire seront automatiquement inclus ici -->
+                    {{ form_widget(form) }}
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-save me-2"></i>Enregistrer
+                        </button>
+                        <a href="{{ path('app_muscic') }}" class="cancel-btn">
+                            <i class="fas fa-arrow-left me-2"></i>Annuler
+                        </a>
+                    </div>
+                    
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

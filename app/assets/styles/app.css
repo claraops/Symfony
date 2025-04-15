@@ -1,3 +1,379 @@
+/* Styles généraux */
 body {
-    background-color: skyblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+/* Wrapper principal */
+.music-creation-wrapper {
+    padding-bottom: 50px;
+}
+
+/* En-tête avec image de fond */
+.music-form-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://source.unsplash.com/random/1600x600/?music,concert');
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+}
+
+.music-form-header .header-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Conteneur du formulaire */
+.music-form-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: -50px;
+    position: relative;
+}
+
+/* Styles du formulaire */
+.music-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.music-form .form-group {
+    margin-bottom: 0;
+}
+
+.music-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 1.05rem;
+}
+
+.music-form input[type="text"],
+.music-form textarea,
+.music-form select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.music-form input[type="text"]:focus,
+.music-form textarea:focus,
+.music-form select:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+    background-color: white;
+    outline: none;
+}
+
+/* Boutons */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    background-color: #6c5ce7;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.submit-btn:hover {
+    background-color: #5649c0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-btn {
+    background-color: white;
+    color: #495057;
+    padding: 12px 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cancel-btn:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .music-form-header {
+        height: 200px;
+    }
+    
+    .music-form-header .header-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .music-form-container {
+        padding: 25px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .submit-btn, .cancel-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+/**************************************************************************************************/
+
+/* Bibliothèque Musicale */
+.music-library-wrapper {
+    padding-bottom: 50px;
+}
+
+/* En-tête */
+.library-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://source.unsplash.com/random/1600x600/?music,library');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+}
+
+.library-header .header-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.library-header .header-content .lead {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Actions */
+.library-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.add-music-btn {
+    background-color: #6c5ce7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.add-music-btn:hover {
+    background-color: #5649c0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    position: relative;
+    width: 300px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.search-input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+    background-color: white;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+/* Tableau */
+.music-table-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    overflow-x: auto;
+}
+
+.music-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.music-table th {
+    text-align: left;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.music-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+.music-table tr:hover td {
+    background-color: #f9f9f9;
+}
+
+.music-title {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.music-artist {
+    color: #6c757d;
+}
+
+/* Badges et Tags */
+.category-badge {
+    background-color: #6c5ce7;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.music-tag {
+    background-color: #e0e0e0;
+    color: #495057;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+/* Boutons d'action */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-btn {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.play-btn:hover {
+    background-color: rgba(40, 167, 69, 0.2);
+}
+
+.edit-btn {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+}
+
+.edit-btn:hover {
+    background-color: rgba(13, 110, 253, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .library-header {
+        height: 200px;
+    }
+    
+    .library-header .header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .library-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-container {
+        width: 100%;
+    }
+    
+    .music-table-container {
+        padding: 15px;
+    }
+    
+    .music-table th, 
+    .music-table td {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+    }
 }

@@ -6,6 +6,46 @@ return [PHP_INT_MAX, [
         'crudControllerFqcn' => null,
         'crudAction' => null,
     ],
+    'admin_category_index' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CategoryCrudController',
+        'crudAction' => 'index',
+    ],
+    'admin_category_new' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CategoryCrudController',
+        'crudAction' => 'new',
+    ],
+    'admin_category_batch_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CategoryCrudController',
+        'crudAction' => 'batchDelete',
+    ],
+    'admin_category_autocomplete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CategoryCrudController',
+        'crudAction' => 'autocomplete',
+    ],
+    'admin_category_render_filters' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CategoryCrudController',
+        'crudAction' => 'renderFilters',
+    ],
+    'admin_category_edit' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CategoryCrudController',
+        'crudAction' => 'edit',
+    ],
+    'admin_category_delete' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CategoryCrudController',
+        'crudAction' => 'delete',
+    ],
+    'admin_category_detail' => [
+        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
+        'crudControllerFqcn' => 'App\\Controller\\Admin\\CategoryCrudController',
+        'crudAction' => 'detail',
+    ],
     'admin_music_index' => [
         'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
         'crudControllerFqcn' => 'App\\Controller\\Admin\\MusicCrudController',

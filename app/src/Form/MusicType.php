@@ -24,7 +24,7 @@ class MusicType extends AbstractType
                 ]
             ])
             ->add('url', TextType::class)
-            ->add('save', SubmitType::class)
+            /*->add('save', SubmitType::class)*/
        // ;
 
         ->add('name', TextType::class, [
@@ -44,11 +44,11 @@ class MusicType extends AbstractType
             'multiple' => true,
             'expanded' => true,
             'label' => 'Tags',
-        ])
+        /*])
         ->add('save', SubmitType::class, [
-            'label' => 'Enregistrer',
+            'label' => 'Enregistrer',*/
         ]);
-        
+    
 
 
     }

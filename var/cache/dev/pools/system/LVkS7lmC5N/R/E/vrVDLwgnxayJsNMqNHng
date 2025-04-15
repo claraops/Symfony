@@ -5,6 +5,16 @@ return [PHP_INT_MAX, [
         '' => [
             '' => 'admin',
         ],
+        'App\\Controller\\Admin\\CategoryCrudController' => [
+            'index' => 'admin_category_index',
+            'new' => 'admin_category_new',
+            'batchDelete' => 'admin_category_batch_delete',
+            'autocomplete' => 'admin_category_autocomplete',
+            'renderFilters' => 'admin_category_render_filters',
+            'edit' => 'admin_category_edit',
+            'delete' => 'admin_category_delete',
+            'detail' => 'admin_category_detail',
+        ],
         'App\\Controller\\Admin\\MusicCrudController' => [
             'index' => 'admin_music_index',
             'new' => 'admin_music_new',

@@ -73,7 +73,7 @@ class __TwigTemplate_1094ce0adc1243a62812064cd4bc1861 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Hello music!";
+        yield "Créer une nouvelle musique";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -96,18 +96,52 @@ class __TwigTemplate_1094ce0adc1243a62812064cd4bc1861 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        yield "  
-    <h1> créer une nouvelle music </h1>
+        // line 6
+        yield "<div class=\"music-creation-wrapper\">
+    <!-- En-tête avec image de fond -->
+    <div class=\"music-form-header\">
+        <div class=\"header-content\">
+            <h1>Créer une musique</h1>
+        </div>
+    </div>
 
-    ";
-        // line 8
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'form');
+    <!-- Contenu du formulaire -->
+    <div class=\"container\">
+        <div class=\"row justify-content-center\">
+            <div class=\"col-md-10 col-lg-8\">
+                <div class=\"music-form-container\">
+                    ";
+        // line 19
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_start', ["attr" => ["class" => "music-form"]]);
         yield "
-
-    <a href=\"";
-        // line 10
+                    
+                    <!-- Les champs du formulaire seront automatiquement inclus ici -->
+                    ";
+        // line 22
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'widget');
+        yield "
+                    
+                    <div class=\"form-actions\">
+                        <button type=\"submit\" class=\"submit-btn\">
+                            <i class=\"fas fa-save me-2\"></i>Enregistrer
+                        </button>
+                        <a href=\"";
+        // line 28
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_muscic");
-        yield "\"> Retour </a>
+        yield "\" class=\"cancel-btn\">
+                            <i class=\"fas fa-arrow-left me-2\"></i>Annuler
+                        </a>
+                    </div>
+                    
+                    ";
+        // line 33
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 33, $this->source); })()), 'form_end');
+        yield "
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -139,22 +173,49 @@ class __TwigTemplate_1094ce0adc1243a62812064cd4bc1861 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  109 => 10,  104 => 8,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  138 => 33,  130 => 28,  121 => 22,  115 => 19,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello music!{% endblock %}
+{% block title %}Créer une nouvelle musique{% endblock %}
 
-{% block body %}  
-    <h1> créer une nouvelle music </h1>
+{% block body %}
+<div class=\"music-creation-wrapper\">
+    <!-- En-tête avec image de fond -->
+    <div class=\"music-form-header\">
+        <div class=\"header-content\">
+            <h1>Créer une musique</h1>
+        </div>
+    </div>
 
-    {{ form(form) }}
-
-    <a href=\"{{ path('app_muscic') }}\"> Retour </a>
-{% endblock %}
-", "muscic/new.html.twig", "/var/www/templates/muscic/new.html.twig");
+    <!-- Contenu du formulaire -->
+    <div class=\"container\">
+        <div class=\"row justify-content-center\">
+            <div class=\"col-md-10 col-lg-8\">
+                <div class=\"music-form-container\">
+                    {{ form_start(form, {'attr': {'class': 'music-form'}}) }}
+                    
+                    <!-- Les champs du formulaire seront automatiquement inclus ici -->
+                    {{ form_widget(form) }}
+                    
+                    <div class=\"form-actions\">
+                        <button type=\"submit\" class=\"submit-btn\">
+                            <i class=\"fas fa-save me-2\"></i>Enregistrer
+                        </button>
+                        <a href=\"{{ path('app_muscic') }}\" class=\"cancel-btn\">
+                            <i class=\"fas fa-arrow-left me-2\"></i>Annuler
+                        </a>
+                    </div>
+                    
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}", "muscic/new.html.twig", "/var/www/templates/muscic/new.html.twig");
     }
 }

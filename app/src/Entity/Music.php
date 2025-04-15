@@ -154,5 +154,10 @@ class Music
         return $this;
     }
 
+    public function getCategory_id(): ?Category
+    {
+        return $this->category;
+    }
+
 
 }
